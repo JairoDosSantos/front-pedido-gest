@@ -109,7 +109,7 @@ const Header: React.FC = () => {
                             <li className="mr-6 my-2 md:my-0">
                                 <a href="#"
                                     className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline
-                                     hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400">
+                                     hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400 hover:link-animation">
                                     <FaHome />
                                     <span className="pb-1 md:pb-0 text-sm">Página Inicial</span>
                                 </a>
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                                 <span className="animate-ping absolute inline-flex h-2 w-2 top-2 right-0 rounded-full bg-red-700 opacity-75" />
 
                                 <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
+                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400 hover:link-animation">
 
                                     <FaTasks />
                                     <span className="pb-1 md:pb-0 text-sm">Pedidos</span>
@@ -128,21 +128,21 @@ const Header: React.FC = () => {
                             <li className="mr-6 my-2 md:my-0 relative">
                                 <span className="animate-ping absolute inline-flex h-2 w-2 top-2 right-0 rounded-full bg-red-700 opacity-75" />
                                 <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400">
+                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400 hover:link-animation">
                                     <FaShoppingBag />
                                     <span className="pb-1 md:pb-0 text-sm">Pedidos de Compra</span>
                                 </a>
                             </li>
                             <li className="mr-6 my-2 md:my-0">
                                 <a href="#" className="flex items-baseline space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-400">
+                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-400 hover:link-animation">
                                     <GoGraph />
                                     <span className="pb-1 md:pb-0 text-sm">Análise</span>
                                 </a>
                             </li>
                             <li className="mr-6 my-2 md:my-0">
                                 <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-400">
+                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-400 hover:link-animation">
                                     <FaWallet />
                                     <span className="pb-1 md:pb-0 text-sm">Pagamentos</span>
                                 </a>

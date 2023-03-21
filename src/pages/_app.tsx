@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
+      <title>Sistema de controle de solicitação de pedidos e compras</title>
       <Component {...pageProps} />
     </>
   )

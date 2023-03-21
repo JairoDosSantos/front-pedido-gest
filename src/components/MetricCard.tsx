@@ -12,7 +12,7 @@ interface MetricTypes {
 const MetricCard: React.FC<MetricTypes> = ({ description, iconElement, title, iconAlternative, color }: MetricTypes) => {
     return (
         <>
-            <div className="w-full md:w-1/2 xl:w-1/3 p-3">
+            <div className="w-full md:w-1/2 xl:w-1/3 p-3 hover:link-animation">
 
                 <div className="bg-gray-900 border border-gray-800 rounded shadow p-2">
                     <div className="flex flex-row items-center">
