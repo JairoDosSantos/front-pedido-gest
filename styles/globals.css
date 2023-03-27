@@ -15,7 +15,7 @@
     span,
     input,
     label {
-        @apply font-Popins
+        @apply font-Popins text-gray-500
     }
 }
 

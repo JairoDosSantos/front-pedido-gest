@@ -5,7 +5,10 @@ import PedidoItem from '../components/PedidoItem';
 
 const Pedido: NextPage = () => {
     return (
-        <main className="container w-full mx-auto pt-32">
+        <main className="container w-full mx-auto pt-36 flex flex-col lg:flex-row gap-4 flex-wrap">
+            <PedidoItem />
+            <PedidoItem />
+            <PedidoItem />
             <PedidoItem />
         </main>
     );

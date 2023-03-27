@@ -9,12 +9,12 @@ const PedidoItem: React.FC = () => {
                 <div className="mx-auto max-w-xs px-8">
                     <p className="text-base font-semibold text-gray-600">Pedido de material de eletricidade</p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                        <span className="text-5xl font-bold tracking-tight text-gray-700">$349</span>
-                        <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+                        <span className="text-5xl font-bold tracking-tight text-gray-700">KZ 349</span>
+                        <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">KWZ</span>
                     </p>
                     <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                        <span className="text-3xl  tracking-tight text-red-400 font-bold">$50</span>
-                        <span className="text-sm  leading-6 tracking-wide text-red-400 font-bold">USD</span>
+                        <span className="text-3xl  tracking-tight text-red-400 font-bold">KZ 50</span>
+                        <span className="text-sm  leading-6 tracking-wide text-red-400 font-bold">KWZ</span>
                     </p>
                     <a href="#" className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold
                      text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2

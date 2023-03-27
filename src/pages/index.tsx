@@ -1,52 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { FaCaretDown, FaExchangeAlt, FaTasks, FaUsers, FaWallet } from 'react-icons/fa';
-import { MdOutlinePendingActions, MdShoppingBag, MdTimer } from 'react-icons/md';
-import MetricCard from '../components/MetricCard';
 
 import dynamic from 'next/dynamic';
-import MyTable from '../components/MyTable';
-
+import Image from 'next/image';
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
+import LOGO_NOAH from '../assets/Noah.png';
 const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false
 })
 
-const Home: NextPage = () => {
-
-  const options = {
-    options: {
-      chart: {
-        id: "basic-bar",
-        strocked: true,
-        toolbar: {
-          show: false
-        }
-      },
-      zoom: {
-        show: false
-      },
-      grid: {
-        show: false
-      },
-      stoke: {
-        width: 3
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false
-        }
-      }
-    },
-    xaxis: {
-      categories: ['SINSE MAIANGA', 'SINSE KILAMBA', 'CONDOMÍNIO 5', 'CONDOMÍNIO 6'],
-    },
-    series: [
-      {
-        name: "series-1",
-        data: [30, 40, 45, 50]
-      }
-    ]
-  }
+const Login: NextPage = () => {
 
   return (
     <>
@@ -55,90 +19,65 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container w-full mx-auto pt-28">
-        <div className="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-          <div className="flex flex-wrap">
-            <MetricCard
-              description='$3249'
-              title='TOTAL NO CARTÃO'
-              iconElement={<FaWallet className='text-6xl text-white' />}
-              color="bg-green-600"
-              iconAlternative={<FaCaretDown className='text-2xl text-green-600' />}
-            />
+      <main className="container w-full mx-auto pt-28 flex items-center justify-center h-screen text-gray-500">
+        <div className="flex items-start  px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal  lg:h-3/5 lg:w-3/4">
+          <div className='lg:w-1/2 w-full bg-gray-800 h-full rounded-l text-white hidden lg:flex lg:flex-col'>
 
-            <MetricCard
-              description='249'
-              title='TOTAL DE USUÁRIOS'
-              iconElement={<FaUsers className='text-6xl text-white' />}
-              color="bg-pink-600"
-              iconAlternative={<FaExchangeAlt className='text-3xl text-pink-600' />}
-            />
-            <MetricCard
-              description='256'
-              title='TOTAL PEDIDOS'
-              iconElement={<FaTasks className='text-6xl text-white' />}
-              color="bg-blue-600"
-              iconAlternative={<FaExchangeAlt className='text-3xl text-blue-600' />}
-            />
-            <MetricCard
-              description='30'
-              title='TOTAL DE PEDIDOS PENDENTES'
-              iconElement={<MdOutlinePendingActions className='text-6xl text-white' />}
-              color="bg-red-600"
-              iconAlternative={<MdTimer className='text-3xl text-red-600' />}
-            />
-            <MetricCard
-              description='249'
-              title='PEDIDOS DE COMPRA EM ATRASO'
-              iconElement={<MdShoppingBag className='text-6xl text-white' />}
-              color="bg-orange-600"
-              iconAlternative={<MdTimer className='text-3xl text-orange-600' />}
-            />
-            <MetricCard
-              description='249'
-              title='TOTAL DE PEDIDOS DE COMPRA'
-              iconElement={<MdShoppingBag className='text-6xl text-white' />}
-              color="bg-purple-600"
-              iconAlternative={<FaExchangeAlt className='text-3xl text-purple-600' />}
-            />
-
+            <div className='w-80 mt-20 text-center mx-auto'>
+              <h3 className='font-extrabold text-2xl'>Seja Bem-vindo!</h3>
+              <p className='mt-6 text-sm'>Para efectuar um pedido de compra de material, por favor acesse o nosso sistema, e efectue o seu pedido!</p>
+            </div>
+            <div className='mx-auto mt-20'>
+              <button
+                className='border border-stone-600 px-4 py-2 rounded-full hover:bg-stone-800 animate-pulse '
+              >Faça já ...</button>
+            </div>
           </div>
 
-          <div className='flex flex-col lg:flex-row gap-4 justify-center my-10 '>
-            <div className='bg-gray-900  rounded-md '>
-              <div className='border-b-2 border-gray-600 py-5 text-gray-600 font-extrabold text-lg uppercase px-4'>
-                <h3>Pedidos de Compras / centro de custo</h3>
-              </div>
-              <div className='p-6'>
-                <Chart
-                  options={options}
-                  series={options.series}
-                  height={250}
-                  width={720}
-                  type={'bar'}
+          <div className='lg:w-1/2 w-full h-full rounded-r bg-gray-900 text-white p-6'>
 
-                />
-              </div>
-            </div>
-            <div className='bg-gray-900  rounded-md '>
-              <div className='border-b-2 border-gray-600 py-5 text-gray-600 font-extrabold text-lg uppercase px-4'>
-                <h3>Pedidos / centro de custo</h3>
-              </div>
-              <div className='p-6'>
-                <Chart
-                  options={options}
-                  series={options.series}
-                  height={250}
-                  width={720}
-                  type={'bar'}
+            <div className='flex justify-center'>
 
-                />
-              </div>
+              <Image
+                alt='Logotipo da NOAH'
+                src={LOGO_NOAH}
+                width={100} />
+
             </div>
 
+            <div className='w-full mt-20 text-center'>
+              <h2 className='font-extrabold text-2xl'>Tela de Acesso ao sistema</h2>
+              <p className='my-4 text-sm'>Por favor, insira o seu e-mail e senha para acessar o sistema!</p>
+            </div>
+
+            <form className='flex flex-col gap-4 justify-center items-center lg:my-20'>
+
+              <div className='bg-gray-600 rounded flex w-full lg:w-80'>
+                <MdEmail className="text-gray-900 text-4xl" />
+                <input
+                  type="email"
+                  className='bg-gray-600 rounded flex w-full lg:w-80 text-xl ring-0 focus:ring-0 text-gray-900 placeholder:text-gray-900'
+                  placeholder='E-mail'
+                />
+              </div>
+
+              <div className='bg-gray-600 rounded flex w-full lg:w-80'>
+                <RiLockPasswordFill className="text-gray-900 text-4xl" />
+                <input
+                  type="password"
+                  className='bg-gray-600 rounded flex w-full lg:w-80 text-xl ring-0 focus:ring-0 text-gray-900 placeholder:text-gray-900'
+                  placeholder='*************'
+                />
+              </div>
+
+              <div className='mt-8'>
+                <button
+                  className='bg-stone-600 px-4 py-2 rounded-full hover:brightness-75'
+                >Acessar</button>
+              </div>
+
+            </form>
           </div>
-          <MyTable title='Pedidos de Compra' />
-
         </div>
       </main>
 
@@ -147,4 +86,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Login

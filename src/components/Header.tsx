@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { FaHome, FaShoppingBag, FaTasks, FaWallet } from 'react-icons/fa';
 import { FiUser } from 'react-icons/fi';
@@ -19,12 +21,13 @@ const Header: React.FC = () => {
     const handleShowNavMenu = () => {
         setShowNavMenu(!showNavMenu)
     }
-
+    const route = useRouter()
+    const hideHeaderComponent = route.pathname === "/" ? "hidden" : "flex"
     return (
         <>
             <nav
 
-                className="bg-gray-900 fixed w-full z-10 top-0 shadow py-4">
+                className={`bg-gray-900 fixed w-full z-10 top-0 shadow py-4 ${hideHeaderComponent}`}>
 
 
                 <div className="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
@@ -57,31 +60,36 @@ const Header: React.FC = () => {
                                         <div
                                             className="bg-gray-900 rounded shadow-md  absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 ">
                                             <ul className="list-reset">
-                                                <li className='flex items-center px-2 hover:bg-gray-800 no-underline hover:no-underline' >
+                                                <li className='flex items-center px-2 hover:bg-gray-800 no-underline hover:no-underline'>
                                                     <FiUser />
-                                                    <a href="#" className="px-4 py-2 block text-gray-100 ">
+                                                    <a href="#" className="px-4 py-2 block text-gray-100">
                                                         Minha conta</a>
                                                 </li>
+
                                                 <li className='flex items-center px-2 hover:bg-gray-800 no-underline hover:no-underline'>
                                                     {
                                                         <div className='relative'>
                                                             <span className="animate-ping absolute inline-flex h-2 w-2 -top-1 right-0 rounded-full bg-red-700 opacity-75" />
+                                                            <span className="absolute inline-flex h-2 w-2 -top-1 right-0 rounded-full bg-red-700 opacity-75" />
                                                             <MdNotificationsActive className='animate-pulse text-red-700' />
                                                         </div>
                                                     }
-                                                    <a href="#" className="px-4 py-2 block text-gray-100 ">Notoficação</a>
+                                                    <a href="#" className="px-4 py-2 block text-gray-100">Notoficação</a>
                                                 </li>
+
                                                 <li>
                                                     <hr className="border-t mx-2 border-gray-400" />
-
                                                 </li>
+
                                                 <li className='flex items-center px-2 hover:bg-gray-800 no-underline hover:no-underline'>
                                                     <RiLogoutCircleFill />
                                                     <a href="#" className="px-4 py-2 block text-gray-100 ">
                                                         Sair
                                                     </a>
                                                 </li>
+
                                             </ul>
+
                                         </div>
                                     )
                                 }
@@ -90,6 +98,7 @@ const Header: React.FC = () => {
 
 
                             <div className="block lg:hidden pr-4">
+
                                 <button
                                     onClick={handleShowNavMenu}
                                     className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
@@ -98,6 +107,7 @@ const Header: React.FC = () => {
                                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                                     </svg>
                                 </button>
+
                             </div>
                         </div>
 
@@ -105,48 +115,57 @@ const Header: React.FC = () => {
 
 
                     <div className={`w-full flex-grow lg:flex lg:items-center lg:w-auto ${!showNavMenu ? 'hidden' : ''}  mt-2 lg:mt-0 bg-gray-900 z-20`} id="nav-content">
+
                         <ul className="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+
                             <li className="mr-6 my-2 md:my-0">
-                                <a href="#"
-                                    className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline
-                                     hover:text-gray-100 border-b-2 border-blue-400 hover:border-blue-400 hover:link-animation">
+                                <Link
+                                    href={'/dashboard'}
+                                    className={`flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-blue-400 no-underline
+                                     hover:text-gray-100 hover:border-b-2  ${route.pathname === '/dashboard' ? 'border-b-2 border-blue-400' : ''} hover:border-blue-400 hover:link-animation`}>
                                     <FaHome />
                                     <span className="pb-1 md:pb-0 text-sm">Página Inicial</span>
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="mr-6 my-2 md:my-0 relative">
-
-                                <span className="animate-ping absolute inline-flex h-2 w-2 top-2 right-0 rounded-full bg-red-700 opacity-75" />
-
-                                <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400 hover:link-animation">
-
+                                <span className="animate-ping absolute inline-flex h-2 w-2 top-3 -right-1 rounded-full bg-red-700 opacity-75" />
+                                <span className="absolute inline-flex h-2 w-2 top-3 -right-1 rounded-full bg-red-700 opacity-75" />
+                                <Link
+                                    href={'/pedido'}
+                                    className={`flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
+                                 hover:text-gray-100 ${route.pathname === '/pedido' ? 'border-b-2 border-pink-400' : ''}  hover:border-pink-400 hover:link-animation`}>
                                     <FaTasks />
                                     <span className="pb-1 md:pb-0 text-sm">Pedidos</span>
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="mr-6 my-2 md:my-0 relative">
-                                <span className="animate-ping absolute inline-flex h-2 w-2 top-2 right-0 rounded-full bg-red-700 opacity-75" />
-                                <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
+                                <span className="animate-ping absolute inline-flex h-2 w-2 top-3 -right-1 rounded-full bg-red-700 opacity-75" />
+                                <span className="absolute inline-flex h-2 w-2 top-3 -right-1 rounded-full bg-red-700 opacity-75" />
+                                <Link href={"/pc"} className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
                                  hover:text-gray-100 border-b-2 border-gray-900  hover:border-purple-400 hover:link-animation">
                                     <FaShoppingBag />
                                     <span className="pb-1 md:pb-0 text-sm">Pedidos de Compra</span>
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="mr-6 my-2 md:my-0">
-                                <a href="#" className="flex items-baseline space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
-                                 hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-400 hover:link-animation">
+                                <Link href={'/analise'} className={`flex items-baseline space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
+                                 hover:text-gray-100 ${route.pathname === '/analise' ? 'border-b-2 border-green-400' : ''}  hover:border-green-400 hover:link-animation`}>
                                     <GoGraph />
                                     <span className="pb-1 md:pb-0 text-sm">Análise</span>
-                                </a>
+                                </Link>
                             </li>
+
                             <li className="mr-6 my-2 md:my-0">
-                                <a href="#" className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
+                                <Link href={'/pagamento'} className="flex items-center space-x-2 py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline
                                  hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-400 hover:link-animation">
                                     <FaWallet />
                                     <span className="pb-1 md:pb-0 text-sm">Pagamentos</span>
-                                </a>
+                                </Link>
                             </li>
+
                         </ul>
 
                         <div className="relative pull-right pl-4 pr-4 md:pr-0">
